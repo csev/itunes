@@ -38,7 +38,8 @@ Once you have the `podcasts.json` file to your liking convert it to XML:
 If all went well, you should be able to validate that file at https://validator.w3.org/feed/ - 
 This is the time to fix every litte thing.
 
-Once you like your `podcasts.xml` file - you can move it into place on your web server and submit it to iTunes.
+Once you like your `podcasts.xml` file - you can move it into place on your web server and submit it to
+iTunes at https://podcastsconnect.apple.com/
 
 New Files
 ---------
