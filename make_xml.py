@@ -7,6 +7,11 @@ import datetime
 import time
 from email import utils
 
+# http://stackoverflow.com/questions/885015/how-to-parse-a-rfc-2822-date-time-into-a-python-datetime
+import email.utils
+# x = email.utils.parsedate_to_datetime('Fri, 15 May 2009 17:58:28 +0700')
+# x  += datetime.timedelta(days=1)
+
 # https://wiki.python.org/moin/EscapingXml
 from xml.sax.saxutils import escape
 # escape("< & >")
@@ -106,8 +111,18 @@ items = [ 'post_title',
 'post_file',
 'post_date',
 'post_excerpt']
-
+# x = email.utils.parsedate_to_datetime('Fri, 15 May 2009 17:58:28 +0700')
+# x  += datetime.timedelta(days=1)
+when = None
 for (item, values) in data['items'].items() : 
+    if when is None : 
+        when = email.utils.parsedate_to_datetime(values['post_date'])
+    else :
+        when  += datetime.timedelta(hours=1)
+    nowtuple = when.timetuple()
+    nowtimestamp = time.mktime(nowtuple)
+    dat = utils.formatdate(nowtimestamp)
+    values['post_date'] = dat
     out = global_fields(item_text, glob, data)
     for field in items:
         out = out.replace(field, str(values[field]))
