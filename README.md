@@ -50,3 +50,14 @@ like:
     python3 make_json.py > new.json
     
 Then carefully merge the new bits into your old `podcasts.json` file before re-running `make_xml.py` again.
+
+Validators
+----------
+
+When you have a file like http://pylearn.sites.uofmhosting.net/media/video.xml then you can try the various validators
+which are quite nice:
+
+* https://podba.se/
+* http://castfeedvalidator.com/
+
+
