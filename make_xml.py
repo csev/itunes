@@ -35,7 +35,7 @@ version="2.0">
 	<link>site_url</link>
 	<lastBuildDate>site_time</lastBuildDate>  <!-- rfc822 -->
 	<language>en-US</language>
-	<generator>Tsugi (http://www.tsugi.org)</generator>
+        <generator>Dr. Chuck's Feed Generator (https://github.com/csev/itunes)</generator>
 	<itunes:author>site_podcast_owner_name</itunes:author>
 	<itunes:subtitle>site_description</itunes:subtitle>
 	<itunes:summary>site_description</itunes:summary>
