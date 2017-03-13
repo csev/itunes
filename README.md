@@ -54,7 +54,7 @@ Then carefully merge the new bits into your old `podcasts.json` file before re-r
 Validators
 ----------
 
-When you have a file like http://pylearn.sites.uofmhosting.net/media/video.xml then you can try the various validators
+When you have a file like http://media.py4e.com/media/video.xml then you can try the various validators
 which are quite nice:
 
 * https://podba.se/
