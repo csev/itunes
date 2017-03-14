@@ -25,6 +25,10 @@ json_data=open('podcast.json').read()
 
 data = json.loads(json_data)
 
+if not 'site_start_date' in data : 
+    print('Error, missing site_start_date in podcast.json')
+    quit()
+
 top='''<?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" 
     xmlns:dc="http://purl.org/dc/elements/1.1/" 
@@ -35,7 +39,7 @@ version="2.0">
 	<link>site_url</link>
 	<lastBuildDate>site_time</lastBuildDate>  <!-- rfc822 -->
 	<language>en-US</language>
-	<generator>Tsugi (http://www.tsugi.org)</generator>
+	<generator>Dr. Chuck's Feed Generator (https://github.com/csev/itunes)</generator>
 	<itunes:author>site_podcast_owner_name</itunes:author>
 	<itunes:subtitle>site_description</itunes:subtitle>
 	<itunes:summary>site_description</itunes:summary>
@@ -111,14 +115,10 @@ items = [ 'post_title',
 'post_file',
 'post_date',
 'post_excerpt']
-# x = email.utils.parsedate_to_datetime('Fri, 15 May 2009 17:58:28 +0700')
-# x  += datetime.timedelta(days=1)
-when = None
+
+when = datetime.datetime.strptime(data['site_start_date'], '%Y-%m-%d')
 for (item, values) in data['items'].items() : 
-    if when is None : 
-        when = email.utils.parsedate_to_datetime(values['post_date'])
-    else :
-        when  += datetime.timedelta(hours=1)
+    when  += datetime.timedelta(hours=-1)
     nowtuple = when.timetuple()
     nowtimestamp = time.mktime(nowtuple)
     dat = utils.formatdate(nowtimestamp)

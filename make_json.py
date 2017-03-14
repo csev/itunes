@@ -34,6 +34,7 @@ print('"categories" :[')
 print('    "Education/Training",')
 print('    "Technology/Software How-To"')
 print('],')
+print('"site_start_date" : "2016-10-01",')
 
 items = [ 'post_title', 'post_excerpt']
 
