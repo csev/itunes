@@ -47,7 +47,15 @@ try the various validators which are quite nice:
 * https://podba.se/
 * http://castfeedvalidator.com/
 
-Once you like your podcasts url you can submit it to iTunes at https://podcastsconnect.apple.com/
+Once you like your podcasts url you can submit it to iTunes or Google Play at
+
+* https://podcastsconnect.apple.com/
+* https://play.google.com/music/podcasts/publish 
+
+and end up with a sweet podcasts like these:
+
+* https://itunes.apple.com/us/podcast/python-for-everybody-audio-py4e/id1214665693
+* https://play.google.com/music/listen?u=0#/ps/Ijgj3aofh6m73rps4wtdk6djhv4
 
 Updates
 -------
