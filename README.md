@@ -36,13 +36,21 @@ Once you have the `podcasts.json` file to your liking convert it to XML:
     python3 make_xml.py > podcasts.xml
 
 If all went well, you should be able to validate that file at https://validator.w3.org/feed/ - 
-This is the time to fix every litte thing.
+This is the time to fix every little thing.
 
-Once you like your `podcasts.xml` file - you can move it into place on your web server and submit it to
-iTunes at https://podcastsconnect.apple.com/
+Other Validators
+----------------
 
-New Files
----------
+When you have a file in place on your web server like http://media.py4e.com/media/video.xml then you can 
+try the various validators which are quite nice:
+
+* https://podba.se/
+* http://castfeedvalidator.com/
+
+Once you like your podcasts url you can submit it to iTunes at https://podcastsconnect.apple.com/
+
+Updates
+-------
 
 If you add some video files, you don't want to wipe out your `podcasts.json` file - you probably want to do something
 like:
@@ -50,14 +58,4 @@ like:
     python3 make_json.py > new.json
     
 Then carefully merge the new bits into your old `podcasts.json` file before re-running `make_xml.py` again.
-
-Validators
-----------
-
-When you have a file like http://pylearn.sites.uofmhosting.net/media/video.xml then you can try the various validators
-which are quite nice:
-
-* https://podba.se/
-* http://castfeedvalidator.com/
-
 
