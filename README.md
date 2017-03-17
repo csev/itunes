@@ -67,3 +67,19 @@ like:
     
 Then carefully merge the new bits into your old `podcasts.json` file before re-running `make_xml.py` again.
 
+Converting Video to Audio
+-------------------------
+
+I like to make audio podcasts from video lecture recordings.  Some students find them useful for studying / review.
+Here is a script I wrote that takes video files from a folder containing video files and makes correspondingly 
+named MP3 files in a `../audio` folder:
+
+    #! /bin/bash
+    for f in *.mp4 *.mov
+    do
+        y=${f%.*}
+        rm -f ../audio/$y.mp3
+        ffmpeg -i $f -ab 256k -af "pan=stereo|c0<c0+c1|c1<c0+c1" ../audio/$y.mp3
+    done
+
+Only works on a Mac :)
